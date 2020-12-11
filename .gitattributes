@@ -1,0 +1,4 @@
+* text=auto
+
+*.pk   text eol=lf
+*.peko text eol=lf
