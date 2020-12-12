@@ -1,0 +1,13 @@
+name: Testing
+on: [push, pull_request]
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up environment
+        uses: actions/setup-go@v2
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Run test
+        run: make test
