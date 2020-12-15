@@ -9,7 +9,9 @@ type Token int
 const (
 	EOF Token = iota
 	EOL
-	Start
+	Comment
+
+	Begin
 	TapeFwd
 	TapeRwd
 	ByteInc
