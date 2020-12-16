@@ -25,7 +25,7 @@ func TestLookupPekolang(t *testing.T) {
 	for ident, tok := range tests {
 		tok2 := dialect.Lookup(dialect.Pekolang, ident)
 		if tok != tok2 {
-			t.Errorf("expected token %d but got %d", tok, tok2)
+			t.Errorf("expected %q but got %q", tok, tok2)
 		}
 	}
 }
@@ -47,7 +47,7 @@ func TestLookupBrainfuck(t *testing.T) {
 	for ident, tok := range tests {
 		tok2 := dialect.Lookup(dialect.Brainfuck, ident)
 		if tok != tok2 {
-			t.Errorf("expected token %d but got %d", tok, tok2)
+			t.Errorf("expected %q but got %q", tok, tok2)
 		}
 	}
 }

@@ -1,3 +1,5 @@
+//go:generate stringer -type=Token
+
 package token
 
 import "fmt"

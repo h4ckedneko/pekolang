@@ -11,6 +11,7 @@ LDFLAGS := "-X 'github.com/h4ckedneko/pekolang/cmd.BuildName=$(BUILD_NAME)' \
 .PHONY: build \
 	install \
 	uninstall \
+	generate \
 	test \
 	format \
 	clean
@@ -23,6 +24,9 @@ install:
 
 uninstall:
 	@ go clean -i
+
+generate:
+	@ go generate ./...
 
 test:
 	@ go test -v ./...
