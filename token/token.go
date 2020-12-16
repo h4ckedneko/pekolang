@@ -24,6 +24,26 @@ const (
 	LoopEnd
 )
 
+var instructions = map[string]Token{
+	"AH↓": Begin,
+	"HA→": TapeFwd,
+	"HA←": TapeRwd,
+	"HA↑": ByteInc,
+	"HA↓": ByteDec,
+	"HA↙": ByteRead,
+	"HA↘": ByteWrite,
+	"HA↗": LoopBegin,
+	"HA↖": LoopEnd,
+}
+
+// Lookup returns a token identified by instruction.
+func Lookup(ident string) Token {
+	if tok, ok := instructions[ident]; ok {
+		return tok
+	}
+	return Comment
+}
+
 // A Position represents an arbitrary source position.
 type Position struct {
 	Line   int
